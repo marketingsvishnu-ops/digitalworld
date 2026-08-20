@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Marketing Agency</title>
+
+  <title>Digital World</title>
 
   <style>
     * {
@@ -13,88 +14,129 @@
       font-family: Arial, sans-serif;
     }
 
-    body {
-      line-height: 1.6;
-      color: #222;
-      background: #f8f9fc;
+    html {
+      scroll-behavior: smooth;
     }
 
-    header {
-      background: #111827;
+    body {
+      background: #050816;
       color: white;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
       padding: 20px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: rgba(5, 8, 22, 0.9);
+      backdrop-filter: blur(10px);
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: bold;
+      color: #00eaff;
+    }
+
+    .logo span {
+      color: #8b5cf6;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 25px;
+      margin-left: 30px;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #38bdf8;
+      color: #00eaff;
     }
 
+    /* HERO */
     .hero {
-      min-height: 600px;
+      min-height: 100vh;
+      padding: 140px 8% 80px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 80px 8%;
-      background: linear-gradient(135deg, #111827, #2563eb);
-      color: white;
+      justify-content: center;
+      text-align: center;
+
+      background:
+        radial-gradient(circle at 20% 30%, #123c70 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #35176b 0%, transparent 30%),
+        #050816;
     }
 
     .hero-content {
-      max-width: 600px;
+      max-width: 900px;
     }
 
     .hero h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
+      font-size: 70px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+
+      background: linear-gradient(
+        90deg,
+        #00eaff,
+        #8b5cf6,
+        #ec4899
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
+      font-size: 20px;
+      color: #cbd5e1;
+      margin-bottom: 35px;
     }
 
     .btn {
       display: inline-block;
-      background: #38bdf8;
-      color: #111827;
-      padding: 14px 28px;
-      border-radius: 6px;
+      padding: 15px 35px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #00eaff, #8b5cf6);
+      color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
     }
 
     .btn:hover {
-      background: white;
+      transform: translateY(-4px);
+      box-shadow: 0 0 35px rgba(139, 92, 246, 0.6);
     }
 
+    /* SECTIONS */
     section {
-      padding: 70px 8%;
+      padding: 100px 8%;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 60px;
     }
 
     .section-title h2 {
-      font-size: 36px;
+      font-size: 42px;
       margin-bottom: 10px;
     }
 
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -102,51 +144,99 @@
     }
 
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding: 35px;
       text-align: center;
+
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(0, 234, 255, 0.2);
+      border-radius: 15px;
+
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #00eaff;
+      box-shadow: 0 10px 35px rgba(0, 234, 255, 0.15);
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
     }
 
     .card h3 {
-      margin: 15px 0;
-      color: #2563eb;
+      color: #00eaff;
+      margin-bottom: 15px;
+      font-size: 23px;
     }
 
     .card p {
-      color: #666;
+      color: #94a3b8;
     }
 
+    /* ABOUT */
     .about {
-      background: white;
+      background: #080d20;
       text-align: center;
     }
 
-    .about p {
-      max-width: 800px;
+    .about-content {
+      max-width: 850px;
       margin: auto;
-      color: #555;
     }
 
+    .about-content p {
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .stat h3 {
+      font-size: 42px;
+      color: #00eaff;
+    }
+
+    .stat p {
+      color: #94a3b8;
+    }
+
+    /* CONTACT */
     .contact {
-      background: #111827;
-      color: white;
       text-align: center;
+      background:
+        radial-gradient(circle, #172554, #050816 70%);
+    }
+
+    .contact h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
     }
 
     .contact p {
-      margin-bottom: 25px;
+      color: #cbd5e1;
+      margin-bottom: 30px;
     }
 
+    /* FOOTER */
     footer {
-      background: #030712;
-      color: #aaa;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
+      background: #02040c;
+      color: #64748b;
     }
 
+    /* MOBILE */
     @media (max-width: 768px) {
+
       header {
         flex-direction: column;
         gap: 15px;
@@ -154,18 +244,27 @@
 
       nav a {
         margin: 0 8px;
-      }
-
-      .hero {
-        text-align: center;
+        font-size: 14px;
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 17px;
       }
 
       .services {
         grid-template-columns: 1fr;
+      }
+
+      .stats {
+        gap: 40px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
       }
     }
   </style>
@@ -173,8 +272,12 @@
 
 <body>
 
+  <!-- NAVIGATION -->
   <header>
-    <div class="logo">MarketPro</div>
+
+    <div class="logo">
+      Digital<span>World</span>
+    </div>
 
     <nav>
       <a href="#home">Home</a>
@@ -182,104 +285,188 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </header>
 
+
+  <!-- HERO -->
   <section class="hero" id="home">
+
     <div class="hero-content">
-      <h1>Grow Your Business With Digital Marketing</h1>
+
+      <h1>Welcome to the Digital World</h1>
 
       <p>
-        We help businesses increase traffic, generate leads,
-        and build powerful online brands through modern digital marketing.
+        Explore the future of technology, digital marketing,
+        artificial intelligence, social media, and online innovation.
       </p>
 
-      <a href="#contact" class="btn">Get Started</a>
+      <a href="#services" class="btn">
+        Explore Digital World
+      </a>
+
     </div>
+
   </section>
 
+
+  <!-- SERVICES -->
   <section id="services">
+
     <div class="section-title">
-      <h2>Our Digital Marketing Services</h2>
-      <p>Everything you need to grow your online presence.</p>
+
+      <h2>Explore Our Digital World</h2>
+
+      <p>
+        Powerful digital solutions for a connected future.
+      </p>
+
     </div>
+
 
     <div class="services">
 
       <div class="card">
-        <h3>SEO</h3>
+        <div class="icon">🌐</div>
+
+        <h3>Digital Marketing</h3>
+
         <p>
-          Improve your search engine rankings and attract
-          more organic visitors to your website.
+          Connect your brand with people around the world
+          through powerful digital marketing strategies.
         </p>
       </div>
 
+
       <div class="card">
-        <h3>Social Media Marketing</h3>
+        <div class="icon">🤖</div>
+
+        <h3>Artificial Intelligence</h3>
+
         <p>
-          Build your brand and engage customers through
-          effective social media campaigns.
+          Discover intelligent technologies that are
+          transforming businesses and everyday life.
         </p>
       </div>
 
+
       <div class="card">
-        <h3>Google Ads</h3>
+        <div class="icon">📱</div>
+
+        <h3>Social Media</h3>
+
         <p>
-          Generate targeted traffic and leads with
-          high-converting paid advertising campaigns.
+          Build communities, share ideas, and connect
+          with audiences across the digital world.
         </p>
       </div>
 
+
       <div class="card">
-        <h3>Content Marketing</h3>
+        <div class="icon">💻</div>
+
+        <h3>Web Technology</h3>
+
         <p>
-          Create valuable content that attracts, educates,
-          and converts your target audience.
+          Create modern websites and digital experiences
+          designed for the connected generation.
         </p>
       </div>
 
+
       <div class="card">
-        <h3>Email Marketing</h3>
+        <div class="icon">☁️</div>
+
+        <h3>Cloud Computing</h3>
+
         <p>
-          Connect with your customers and increase sales
-          with strategic email campaigns.
+          Access powerful digital infrastructure,
+          applications, and data from anywhere.
         </p>
       </div>
 
+
       <div class="card">
-        <h3>Web Analytics</h3>
+        <div class="icon">🔐</div>
+
+        <h3>Cyber Security</h3>
+
         <p>
-          Track performance and make data-driven decisions
-          to improve your marketing results.
+          Protect your digital identity, information,
+          systems, and online business.
         </p>
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="section-title">
-      <h2>Why Choose Us?</h2>
+
+    <div class="about-content">
+
+      <div class="section-title">
+        <h2>One World. One Digital Future.</h2>
+      </div>
+
+      <p>
+        The Digital World connects people, businesses, information,
+        and technology across the globe. From artificial intelligence
+        and cloud computing to digital marketing and social media,
+        technology is changing the way we live and work.
+      </p>
+
+
+      <div class="stats">
+
+        <div class="stat">
+          <h3>24/7</h3>
+          <p>Digital Connection</p>
+        </div>
+
+        <div class="stat">
+          <h3>∞</h3>
+          <p>Possibilities</p>
+        </div>
+
+        <div class="stat">
+          <h3>1</h3>
+          <p>Connected World</p>
+        </div>
+
+      </div>
+
     </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>Enter the Future</h2>
 
     <p>
-      Our digital marketing team combines creativity, technology,
-      and data to create marketing strategies that deliver measurable
-      business growth. We focus on reaching the right audience,
-      increasing conversions, and maximizing your return on investment.
+      The digital world is evolving every day.
+      Be part of the next generation.
     </p>
+
+    <a href="mailto:hello@example.com" class="btn">
+      Get Started
+    </a>
+
   </section>
 
-  <section class="contact" id="contact">
-    <div class="section-title">
-      <h2>Ready to Grow?</h2>
-      <p>Let's build your digital marketing strategy today.</p>
-    </div>
 
-    <a href="mailto:hello@example.com" class="btn">Contact Us</a>
-  </section>
-
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 MarketPro Digital Marketing. All Rights Reserved.</p>
+
+    <p>
+      © 2026 DigitalWorld. Explore. Connect. Innovate.
+    </p>
+
   </footer>
 
 </body>
