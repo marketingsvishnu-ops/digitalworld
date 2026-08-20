@@ -1,272 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ICESUPER Demo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Marketing Agency</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-body{
-  background:#0f1020;
-  color:white;
-}
+    body {
+      line-height: 1.6;
+      color: #222;
+      background: #f8f9fc;
+    }
 
-.container{
-  display:flex;
-  min-height:100vh;
-}
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.demo{
-  width:70%;
-  background:#111;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-iframe{
-  width:100%;
-  height:100vh;
-  border:none;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+    }
 
-.right{
-  width:30%;
-  padding:30px 22px;
-  background:linear-gradient(180deg,#181a35,#0b0c18);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+    nav a:hover {
+      color: #38bdf8;
+    }
 
-.box{
-  width:100%;
-  background:rgba(10,10,10,.92);
-  border:1px solid #d4af37;
-  border-radius:22px;
-  padding:26px 20px;
-  text-align:center;
-  box-shadow:0 0 35px rgba(212,175,55,.35);
-}
+    .hero {
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 8%;
+      background: linear-gradient(135deg, #111827, #2563eb);
+      color: white;
+    }
 
-.badge{
-  display:inline-block;
-  background:#d4af37;
-  color:#111;
-  padding:8px 18px;
-  border-radius:30px;
-  font-weight:800;
-  margin-bottom:16px;
-}
+    .hero-content {
+      max-width: 600px;
+    }
 
-h1{
-  font-size:32px;
-  color:#ffd86b;
-  margin-bottom:10px;
-  text-transform:uppercase;
-}
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
 
-.sub{
-  font-size:17px;
-  line-height:1.5;
-  margin-bottom:22px;
-  color:#eee;
-}
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
 
-.features{
-  display:grid;
-  gap:12px;
-  margin:22px 0;
-}
+    .btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #111827;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.feature{
-  background:linear-gradient(90deg,#1b1b1b,#2b2208);
-  border:1px solid rgba(212,175,55,.6);
-  padding:14px;
-  border-radius:14px;
-  font-size:17px;
-  font-weight:700;
-}
+    .btn:hover {
+      background: white;
+    }
 
-.feature span{
-  color:#ffd86b;
-}
+    section {
+      padding: 70px 8%;
+    }
 
-.website-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-top:16px;
-  font-size:14px;
-  font-weight:bold;
-}
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-.website-row a{
-  text-decoration:none;
-}
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
 
-.website{
-  color:#25D366;
-}
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
 
-.whatsapp-small{
-  color:#ffd86b;
-}
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
 
-.cta{
-  display:block;
-  background:#25D366;
-  color:#fff;
-  text-decoration:none;
-  padding:17px;
-  border-radius:16px;
-  font-size:20px;
-  font-weight:900;
-  margin-top:22px;
-  box-shadow:0 8px 18px rgba(37,211,102,.35);
-  transition:.3s;
-}
+    .card h3 {
+      margin: 15px 0;
+      color: #2563eb;
+    }
 
-.cta:hover{
-  transform:scale(1.03);
-  background:#1ebe5d;
-}
+    .card p {
+      color: #666;
+    }
 
-.trust{
-  margin-top:16px;
-  color:#ccc;
-  font-size:14px;
-  line-height:1.5;
-}
+    .about {
+      background: white;
+      text-align: center;
+    }
 
-.footer{
-  margin-top:18px;
-  font-size:12px;
-  color:#aaa;
-  line-height:1.5;
-}
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      color: #555;
+    }
 
-@media(max-width:768px){
-  .container{
-    flex-direction:column;
-  }
+    .contact {
+      background: #111827;
+      color: white;
+      text-align: center;
+    }
 
-  .demo,
-  .right{
-    width:100%;
-  }
+    .contact p {
+      margin-bottom: 25px;
+    }
 
-  iframe{
-    height:500px;
-  }
+    footer {
+      background: #030712;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+    }
 
-  .right{
-    padding:20px;
-  }
-}
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
 
-@media(max-width:480px){
-  h1{
-    font-size:26px;
-  }
+      nav a {
+        margin: 0 8px;
+      }
 
-  .sub{
-    font-size:16px;
-  }
+      .hero {
+        text-align: center;
+      }
 
-  .feature{
-    font-size:16px;
-    padding:12px;
-  }
+      .hero h1 {
+        font-size: 38px;
+      }
 
-  .cta{
-    font-size:18px;
-    padding:15px;
-  }
-
-  .website-row{
-    flex-direction:column;
-    gap:8px;
-  }
-}
-</style>
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <header>
+    <div class="logo">MarketPro</div>
 
-  <div class="demo">
-    <iframe src="https://icesuper.info/"></iframe>
-  </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <div class="right">
-    <div class="box">
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Grow Your Business With Digital Marketing</h1>
 
-      <div class="badge">ICESUPER OFFICIAL</div>
-
-      <h1>ICESUPER WHITELABEL &amp; MASTER AVAILABLE</h1>
-
-      <p class="sub">
-        Get your Icesuper Whitelabel and Master Panel
-        in the cheapest rate.
+      <p>
+        We help businesses increase traffic, generate leads,
+        and build powerful online brands through modern digital marketing.
       </p>
 
-      <div class="features">
-        <div class="feature">
-          Whitelabel: <span>Available Now</span>
-        </div>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+  </section>
 
-        <div class="feature">
-          Master Panel: <span>Available Now</span>
-        </div>
+  <section id="services">
+    <div class="section-title">
+      <h2>Our Digital Marketing Services</h2>
+      <p>Everything you need to grow your online presence.</p>
+    </div>
 
-        <div class="feature">
-          Cheapest Rate: <span>Best Price</span>
-        </div>
+    <div class="services">
 
-        <div class="feature">
-          Website: <span>icesuper.info</span>
-        </div>
+      <div class="card">
+        <h3>SEO</h3>
+        <p>
+          Improve your search engine rankings and attract
+          more organic visitors to your website.
+        </p>
       </div>
 
-      <div class="website-row">
-        <a class="website" href="https://icesuper.info/" target="_blank">
-          🌐 icesuper.info
-        </a>
-
-        <a class="whatsapp-small" href="https://wa.me/+447767775396" target="_blank">
-          💬 WhatsApp
-        </a>
+      <div class="card">
+        <h3>Social Media Marketing</h3>
+        <p>
+          Build your brand and engage customers through
+          effective social media campaigns.
+        </p>
       </div>
 
-      <a class="cta"
-         href="https://wa.me/+447767775396?text=Hello%20I%20want%20Icesuper%20Whitelabel%20or%20Master"
-         target="_blank">
-        📲 WhatsApp Now
-      </a>
+      <div class="card">
+        <h3>Google Ads</h3>
+        <p>
+          Generate targeted traffic and leads with
+          high-converting paid advertising campaigns.
+        </p>
+      </div>
 
-      <p class="trust">
-        ✅ Check our website on left side<br>
-        ✅ Direct WhatsApp support<br>
-        ✅ Cheapest rate available<br>
-        📞 +447767775396
-      </p>
+      <div class="card">
+        <h3>Content Marketing</h3>
+        <p>
+          Create valuable content that attracts, educates,
+          and converts your target audience.
+        </p>
+      </div>
 
-      <div class="footer">
-        Icesuper Whitelabel &amp; Master Available | Contact on WhatsApp
+      <div class="card">
+        <h3>Email Marketing</h3>
+        <p>
+          Connect with your customers and increase sales
+          with strategic email campaigns.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Web Analytics</h3>
+        <p>
+          Track performance and make data-driven decisions
+          to improve your marketing results.
+        </p>
       </div>
 
     </div>
-  </div>
+  </section>
 
-</div>
+  <section class="about" id="about">
+    <div class="section-title">
+      <h2>Why Choose Us?</h2>
+    </div>
+
+    <p>
+      Our digital marketing team combines creativity, technology,
+      and data to create marketing strategies that deliver measurable
+      business growth. We focus on reaching the right audience,
+      increasing conversions, and maximizing your return on investment.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-title">
+      <h2>Ready to Grow?</h2>
+      <p>Let's build your digital marketing strategy today.</p>
+    </div>
+
+    <a href="mailto:hello@example.com" class="btn">Contact Us</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 MarketPro Digital Marketing. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
-```
